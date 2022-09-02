@@ -6,6 +6,19 @@
         <p>Complete los campos para crear una cuenta</p>
         <div class="input-container">
           <input
+            type="text"
+            id="name"
+            class="fadeIn second"
+            name="name"
+            placeholder="Nombre"
+            [(ngModel)]="newUser.name"
+            required
+          />
+          <span class="fa-icon"><fa-icon [icon]="userIcon"></fa-icon></span>
+        </div>
+
+        <div class="input-container">
+          <input
             type="email"
             id="login"
             class="fadeIn second"

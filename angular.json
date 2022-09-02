@@ -104,6 +104,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "SalaDeJuegosTP:build:production",
+            "firebaseProject": "fir-userauth-fe03f",
+            "firebaseHostingSite": "fir-userauth-fe03f"
+          }
         }
       }
     }

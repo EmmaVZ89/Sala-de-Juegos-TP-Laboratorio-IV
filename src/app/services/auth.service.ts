@@ -1,0 +1,79 @@
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { User } from '../class/user';
+import { NotificationService } from './notification.service';
+import { Router } from '@angular/router';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthService {
+  constructor(
+    private angularFireAuth: AngularFireAuth,
+    private angularFirestore: AngularFirestore,
+    private notifyService: NotificationService,
+    private router: Router
+  ) {}
+
+  registerNewUser(newUser: User) {
+    this.angularFireAuth
+      .createUserWithEmailAndPassword(newUser.email, newUser.password)
+      .then((data) => {
+        this.angularFirestore
+          .collection('user')
+          .doc(data.user?.uid)
+          .set({
+            userId: data.user?.uid,
+            userName: newUser.name,
+            userEmail: newUser.email,
+          })
+          .then(() => {
+            this.notifyService.showSuccess(
+              'Redirigiendo...',
+              'Registro exitoso'
+            );
+            setTimeout(() => {
+              this.router.navigate(['/login']);
+            }, 2000);
+          })
+          .catch((error) => {
+            this.notifyService.showError(this.createMessage(error.code), 'Error');
+          });
+      })
+      .catch((error) => {
+        this.notifyService.showError(this.createMessage(error.code), 'Error');
+      });
+  } // end of registerNewUser
+
+  createMessage(errorCode: string): string {
+    let message: string = '';
+    switch (errorCode) {
+      case 'auth/internal-error':
+        message = 'Los campos estan vacios';
+        break;
+      case 'auth/operation-not-allowed':
+        message = 'La operación no está permitida.';
+        break;
+      case 'auth/email-already-in-use':
+        message = 'El email ya está registrado.';
+        break;
+      case 'auth/invalid-email':
+        message = 'El email no es valido.';
+        break;
+      case 'auth/weak-password':
+        message = 'La contraseña debe tener al menos 6 caracteres';
+        break;
+      default:
+        message = 'Error al crear el usuario.';
+        break;
+    }
+
+    return message;
+  } // end of createMessage
+
+  getUserLogged() {
+    return this.angularFireAuth
+  }
+}

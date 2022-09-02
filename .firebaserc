@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "fir-userauth-fe03f": {
+      "hosting": {
+        "SalaDeJuegosTP": [
+          "fir-userauth-fe03f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "fir-userauth-fe03f"
+  }
+}

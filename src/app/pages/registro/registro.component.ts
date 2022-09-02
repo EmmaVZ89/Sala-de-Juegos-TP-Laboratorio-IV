@@ -4,8 +4,10 @@ import {
   faEnvelope,
   faEye,
   faEyeSlash,
+  faUser
 } from '@fortawesome/free-solid-svg-icons';
 import { NotificationService } from 'src/app/services/notification.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-registro',
@@ -19,22 +21,26 @@ export class RegistroComponent implements OnInit {
   envelope = faEnvelope;
   openEye = faEye;
   closeEye = faEyeSlash;
+  userIcon = faUser;
 
   typePass1 = true;
   typePass2 = true;
 
-  constructor(private notifyService:NotificationService) {}
+  constructor(
+    private notifyService: NotificationService,
+    private authService: AuthService
+  ) {}
 
   ngOnInit(): void {}
 
   registerUser(event: Event) {
     event.preventDefault();
     if (this.newUser.password === this.confirmPassword) {
-      console.log('usuario registrado');
+      this.authService.registerNewUser(this.newUser);
+    } else {
+      this.notifyService.showError("Las contraseñas no son iguales", "Error contraseña");
     }
-
-    this.notifyService.showSuccess("Sesión iniciada", "Exito");
-  }
+  } // end of registerUser
 
   toggleTypePass1() {
     this.typePass1 = !this.typePass1;
