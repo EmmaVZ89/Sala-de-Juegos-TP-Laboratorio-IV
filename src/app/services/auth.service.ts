@@ -5,17 +5,33 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { User } from '../class/user';
 import { NotificationService } from './notification.service';
 import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  user$: any;
+
   constructor(
     private angularFireAuth: AngularFireAuth,
     private angularFirestore: AngularFirestore,
     private notifyService: NotificationService,
     private router: Router
-  ) {}
+  ) {
+    this.user$ = this.angularFireAuth.authState.pipe(
+      switchMap((user:any) => {
+        if (user) {
+          return this.angularFirestore
+            .doc<User>(`user/${user.uid}`)
+            .valueChanges();
+        } else {
+          return of(null);
+        }
+      })
+    );
+  } // end of constructor
 
   registerNewUser(newUser: User) {
     this.angularFireAuth
@@ -39,7 +55,10 @@ export class AuthService {
             }, 2000);
           })
           .catch((error) => {
-            this.notifyService.showError(this.createMessage(error.code), 'Error');
+            this.notifyService.showError(
+              this.createMessage(error.code),
+              'Error'
+            );
           });
       })
       .catch((error) => {
@@ -47,7 +66,23 @@ export class AuthService {
       });
   } // end of registerNewUser
 
-  createMessage(errorCode: string): string {
+  async userLogin(email: string, password: string) {
+    try {
+      return await this.angularFireAuth.signInWithEmailAndPassword(
+        email,
+        password
+      );
+    } catch (error) {
+      this.notifyService.showError("Email y/o contraseña invalidos", "Inicio fallido");
+      return null;
+    }
+  } // end of userLogin
+
+  userLogout(){
+    this.angularFireAuth.signOut();
+  } // end of logout
+
+  private createMessage(errorCode: string): string {
     let message: string = '';
     switch (errorCode) {
       case 'auth/internal-error':
@@ -74,6 +109,6 @@ export class AuthService {
   } // end of createMessage
 
   getUserLogged() {
-    return this.angularFireAuth
-  }
+    return this.angularFireAuth.authState;
+  } // end of getUserLogged
 }

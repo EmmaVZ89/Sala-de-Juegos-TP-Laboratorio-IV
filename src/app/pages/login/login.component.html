@@ -1,29 +1,71 @@
-<div class="wrapper fadeInDown">
-  <div id="formContent">
-    <form>
-      <h1>{{ titleLogin }}</h1>
-      <input
-        type="text"
-        id="login"
-        class="fadeIn second"
-        name="nombre"
-        placeholder="Nombre"
-        [(ngModel)]="user.name"
-      />
-      <input
-        type="text"
-        id="password"
-        class="fadeIn third"
-        name="clave"
-        placeholder="Contraseña"
-        [(ngModel)]="user.password"
-      />
-      <input
-        type="submit"
-        class="fadeIn fourth"
-        value="Ingresar"
-        (click)="ingresar($event)"
-      />
-    </form>
+<div class="registro-container">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <form>
+        <h1>{{ titleLogin }}</h1>
+        <p>Complete los campos para iniciar sesión</p>
+        <div class="input-container">
+          <input
+            type="email"
+            id="login"
+            class="fadeIn second"
+            name="email"
+            placeholder="Dirección de email"
+            [(ngModel)]="userForm.email"
+            required
+          />
+          <span class="fa-icon"><fa-icon [icon]="envelope"></fa-icon></span>
+        </div>
+
+        <div class="input-container">
+          <input
+            [type]="typePass1 ? 'password' : 'text'"
+            id="password1"
+            class="fadeIn third"
+            name="clave1"
+            placeholder="Contraseña"
+            [(ngModel)]="userForm.password"
+            required
+          />
+          <span
+            [title]="typePass1 ? 'Ver contraseña' : 'Dejar de ver'"
+            class="fa-icon"
+            ><fa-icon
+              [style]="typePass1 ? '' : 'color:#0099ad'"
+              [icon]="typePass1 ? openEye : closeEye"
+              (click)="toggleTypePass1()"
+            ></fa-icon
+          ></span>
+        </div>
+
+        <div class="input-container">
+          <input
+            [type]="typePass2 ? 'password' : 'text'"
+            id="password2"
+            class="fadeIn third"
+            name="clave2"
+            placeholder="Confirmar Contraseña"
+            [(ngModel)]="confirmPassword"
+            required
+          />
+          <span
+            [title]="typePass2 ? 'Ver contraseña' : 'Dejar de ver'"
+            class="fa-icon"
+            ><fa-icon
+              [style]="typePass2 ? '' : 'color:#0099ad'"
+              [icon]="typePass2 ? openEye : closeEye"
+              (click)="toggleTypePass2()"
+            ></fa-icon
+          ></span>
+        </div>
+
+        <input
+          type="submit"
+          class="fadeIn fourth"
+          value="Iniciar"
+          (click)="login($event)"
+        />
+      </form>
+    </div>
   </div>
 </div>

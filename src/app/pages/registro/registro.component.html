@@ -44,6 +44,7 @@
             [title]="typePass1 ? 'Ver contraseña' : 'Dejar de ver'"
             class="fa-icon"
             ><fa-icon
+              [style]="typePass1 ? '' : 'color:green'"
               [icon]="typePass1 ? openEye : closeEye"
               (click)="toggleTypePass1()"
             ></fa-icon
@@ -64,6 +65,7 @@
             [title]="typePass2 ? 'Ver contraseña' : 'Dejar de ver'"
             class="fa-icon"
             ><fa-icon
+              [style]="typePass2 ? '' : 'color:green'"
               [icon]="typePass2 ? openEye : closeEye"
               (click)="toggleTypePass2()"
             ></fa-icon

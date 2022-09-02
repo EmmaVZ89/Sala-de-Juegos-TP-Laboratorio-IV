@@ -1,1 +1,40 @@
-<p>quien-soy works!</p>
+<div class="home-container">
+  <div class="wrapper fadeInDown">
+    <div class="row" id="formContent">
+      <div class="col col-img">
+        <img class="img" src="{{ myProfile.avatar_url }}" alt="" />
+      </div>
+      <div class="col">
+        <div class="welcome">
+          <h3>{{ myProfile.name }}</h3>
+          <h3>División: 4° A</h3>
+          <h2 style="padding-top: 2rem;">Juego de la vida</h2>
+          <p>
+            El juego consiste en una malla de 30x30 con celdas "vivas" o
+            "muertas" iniciadas aleatoriamente. El objetivo es "matar" todas las
+            celdas en los intentos dados, teniendo en cuenta las siguientes
+            reglas:
+          </p>
+          <ul style="text-align: left;">
+            <li>
+              Una celda muerta con exactamente 3 celdas vecinas vivas "nace" (es
+              decir, al turno siguiente estará viva).
+            </li>
+            <li>
+              Una celda viva con 2 o 3 celdas vecinas vivas sigue viva, en otro
+              caso muere (por "soledad" o "superpoblación").
+            </li>
+            <li>
+              <a
+                href="https://es.wikipedia.org/wiki/Juego_de_la_vida"
+                target="_blank"
+                >Más Información</a
+              >
+            </li>
+          </ul>
+          <button>JUGAR</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

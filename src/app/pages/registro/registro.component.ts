@@ -4,7 +4,7 @@ import {
   faEnvelope,
   faEye,
   faEyeSlash,
-  faUser
+  faUser,
 } from '@fortawesome/free-solid-svg-icons';
 import { NotificationService } from 'src/app/services/notification.service';
 import { AuthService } from 'src/app/services/auth.service';
@@ -35,10 +35,23 @@ export class RegistroComponent implements OnInit {
 
   registerUser(event: Event) {
     event.preventDefault();
-    if (this.newUser.password === this.confirmPassword) {
-      this.authService.registerNewUser(this.newUser);
+    if (
+      this.newUser.name === '' ||
+      this.newUser.email === '' ||
+      this.newUser.password === '' ||
+      this.confirmPassword === ''
+    ) {
+      this.notifyService.showWarning(
+        'Debe completar todos los campos',
+        'Atención'
+      );
+    } else if (this.newUser.password !== this.confirmPassword) {
+      this.notifyService.showWarning(
+        'Las contraseñas deben ser iguales',
+        'Error contraseña'
+      );
     } else {
-      this.notifyService.showError("Las contraseñas no son iguales", "Error contraseña");
+      this.authService.registerNewUser(this.newUser);
     }
   } // end of registerUser
 
