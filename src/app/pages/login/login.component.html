@@ -1,0 +1,29 @@
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <form>
+      <h1>{{ titleLogin }}</h1>
+      <input
+        type="text"
+        id="login"
+        class="fadeIn second"
+        name="nombre"
+        placeholder="Nombre"
+        [(ngModel)]="user.name"
+      />
+      <input
+        type="text"
+        id="password"
+        class="fadeIn third"
+        name="clave"
+        placeholder="Contraseña"
+        [(ngModel)]="user.password"
+      />
+      <input
+        type="submit"
+        class="fadeIn fourth"
+        value="Ingresar"
+        (click)="ingresar($event)"
+      />
+    </form>
+  </div>
+</div>

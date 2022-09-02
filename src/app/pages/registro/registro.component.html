@@ -1,0 +1,69 @@
+<div class="registro-container">
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <form>
+        <h1>{{ titleLogin }}</h1>
+        <p>Complete los campos para crear una cuenta</p>
+        <div class="input-container">
+          <input
+            type="email"
+            id="login"
+            class="fadeIn second"
+            name="email"
+            placeholder="Dirección de email"
+            [(ngModel)]="newUser.email"
+            required
+          />
+          <span class="fa-icon"><fa-icon [icon]="envelope"></fa-icon></span>
+        </div>
+
+        <div class="input-container">
+          <input
+            [type]="typePass1 ? 'password' : 'text'"
+            id="password1"
+            class="fadeIn third"
+            name="clave1"
+            placeholder="Contraseña"
+            [(ngModel)]="newUser.password"
+            required
+          />
+          <span
+            [title]="typePass1 ? 'Ver contraseña' : 'Dejar de ver'"
+            class="fa-icon"
+            ><fa-icon
+              [icon]="typePass1 ? openEye : closeEye"
+              (click)="toggleTypePass1()"
+            ></fa-icon
+          ></span>
+        </div>
+
+        <div class="input-container">
+          <input
+            [type]="typePass2 ? 'password' : 'text'"
+            id="password2"
+            class="fadeIn third"
+            name="clave2"
+            placeholder="Confirmar Contraseña"
+            [(ngModel)]="confirmPassword"
+            required
+          />
+          <span
+            [title]="typePass2 ? 'Ver contraseña' : 'Dejar de ver'"
+            class="fa-icon"
+            ><fa-icon
+              [icon]="typePass2 ? openEye : closeEye"
+              (click)="toggleTypePass2()"
+            ></fa-icon
+          ></span>
+        </div>
+
+        <input
+          type="submit"
+          class="fadeIn fourth"
+          value="Registrar"
+          (click)="registerUser($event)"
+        />
+      </form>
+    </div>
+  </div>
+</div>
