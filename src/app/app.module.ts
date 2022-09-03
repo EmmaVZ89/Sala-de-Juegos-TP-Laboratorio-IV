@@ -21,6 +21,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorComponent } from './pages/error/error.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     QuienSoyComponent,
     RegistroComponent,
-    NavbarComponent
+    NavbarComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
