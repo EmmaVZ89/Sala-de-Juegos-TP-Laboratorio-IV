@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
+import { NotificationService } from 'src/app/services/notification.service';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navbar',
@@ -8,13 +10,26 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent implements OnInit {
-  userLogged = true;
+  userIcon = faUser;
   user: any = {};
-  isLogged = true;
+  isLogged = false;
 
-  constructor(private router: Router, private authService: AuthService) {}
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private notifyService: NotificationService
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authService.user$.subscribe((user: any) => {
+      if (user) {
+        this.user = user;
+        this.isLogged = true;
+      } else {
+        this.user = null;
+      }
+    });
+  }
 
   irARegistro() {
     this.router.navigate(['/registro']);
@@ -25,6 +40,11 @@ export class NavbarComponent implements OnInit {
   }
 
   logout() {
-    this.authService.userLogout();
+    this.notifyService.showInfo('La sesión fue cerrada', 'Fin Sesión');
+    setTimeout(() => {
+      this.isLogged = false;
+      this.user = null;
+      this.authService.userLogout();
+    }, 1000);
   }
 }

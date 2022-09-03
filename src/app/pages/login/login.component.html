@@ -3,7 +3,16 @@
     <div id="formContent">
       <form>
         <h1>{{ titleLogin }}</h1>
-        <p>Complete los campos para iniciar sesión</p>
+        <p>
+          Complete los campos para iniciar sesión o ingrese como
+          <input
+            style="margin: 0; padding: 5px 15px; margin-left: 10px"
+            type="button"
+            class="fadeIn fourth"
+            value="Invitado"
+            (click)="loadFields()"
+          />
+        </p>
         <div class="input-container">
           <input
             type="email"

@@ -44,6 +44,7 @@ export class AuthService {
             userId: data.user?.uid,
             userName: newUser.name,
             userEmail: newUser.email,
+            createdAt: Date.now()
           })
           .then(() => {
             this.notifyService.showSuccess(
@@ -51,7 +52,7 @@ export class AuthService {
               'Registro exitoso'
             );
             setTimeout(() => {
-              this.router.navigate(['/login']);
+              this.router.navigate(['']);
             }, 2000);
           })
           .catch((error) => {
@@ -81,6 +82,10 @@ export class AuthService {
   userLogout(){
     this.angularFireAuth.signOut();
   } // end of logout
+
+  createUserLog(collectionName:string, log:any) {
+    return this.angularFirestore.collection(collectionName).add(log);
+  } // end of createUserLog
 
   private createMessage(errorCode: string): string {
     let message: string = '';

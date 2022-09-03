@@ -7,8 +7,11 @@ import {
   faEye,
   faEyeSlash,
   faUser,
+  faArrowAltCircleRight,
+  faArrowRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-login',
@@ -23,6 +26,7 @@ export class LoginComponent implements OnInit {
   openEye = faEye;
   closeEye = faEyeSlash;
   userIcon = faUser;
+  arrow = faArrowRight;
   typePass1 = true;
   typePass2 = true;
   confirmPassword = '';
@@ -63,6 +67,12 @@ export class LoginComponent implements OnInit {
         this.userForm.password
       );
       if (inicio) {
+        this.authService.user$.subscribe((user: any) => {
+          if (user) {
+            this.user = user;
+            this.createLog();
+          }
+        });
         this.notifyService.showSuccess('Redirigiendo...', 'Inicio exitoso');
         setTimeout(() => {
           this.router.navigate(['']);
@@ -71,6 +81,22 @@ export class LoginComponent implements OnInit {
     }
   } // end of login
 
+  createLog() {
+    const currentDate = moment(new Date()).format('DD-MM-YYYY HH:mm:ss');
+    const log = {
+      user: this.user,
+      date: currentDate,
+    };
+    this.authService
+      .createUserLog('userLogs', log)
+      .then((res) => {
+        console.log('Log Creado');
+      })
+      .catch((error) => {
+        console.log('Error al crear el log');
+      });
+  } // end of createLog
+
   toggleTypePass1() {
     this.typePass1 = !this.typePass1;
   }
@@ -78,4 +104,12 @@ export class LoginComponent implements OnInit {
   toggleTypePass2() {
     this.typePass2 = !this.typePass2;
   }
+
+  loadFields() {
+    this.notifyService.showInfo('Campos cargados', 'Invitado');
+    this.confirmPassword = 'soyinvitado1234';
+    this.userForm.email = 'invitado@mail.com';
+    this.userForm.password = 'soyinvitado1234';
+  } // end of loadFields
+  
 }

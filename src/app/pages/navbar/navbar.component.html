@@ -20,7 +20,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item" *ngIf="userLogged">
+        <li class="nav-item" *ngIf="isLogged">
           <a class="nav-link active" aria-current="page" routerLink="">
             <button data-text="Awesome" class="button">
               <span class="actual-text">&nbsp;Home&nbsp;</span>
@@ -30,7 +30,7 @@
             </button>
           </a>
         </li>
-        <li class="nav-item" *ngIf="userLogged">
+        <li class="nav-item" *ngIf="isLogged">
           <a class="nav-link active" aria-current="page" routerLink="/quiensoy">
             <button data-text="Awesome" class="button">
               <span class="actual-text">&nbsp;Quien&nbsp;Soy&nbsp;</span>
@@ -40,7 +40,7 @@
             </button>
           </a>
         </li>
-        <li class="nav-item" *ngIf="userLogged">
+        <li class="nav-item" *ngIf="isLogged">
           <a class="nav-link" routerLink="#">
             <button data-text="Awesome" class="button">
               <span class="actual-text">&nbsp;Juegos&nbsp;</span>
@@ -50,7 +50,7 @@
             </button>
           </a>
         </li>
-        <li class="nav-item" *ngIf="userLogged">
+        <li class="nav-item" *ngIf="isLogged">
           <a class="nav-link" routerLink="#">
             <button data-text="Awesome" class="button">
               <span class="actual-text">&nbsp;Chat&nbsp;</span>
@@ -60,7 +60,7 @@
             </button>
           </a>
         </li>
-        <li class="nav-item" *ngIf="userLogged">
+        <li class="nav-item" *ngIf="isLogged">
           <a class="nav-link" routerLink="#">
             <button data-text="Awesome" class="button">
               <span class="actual-text">&nbsp;Encuesta&nbsp;</span>
@@ -71,18 +71,22 @@
           </a>
         </li>
       </ul>
-      <!-- <span
-        style="color: white; font-weight: bold"
-        class="navbar-brand"
-        href="#"
-        *ngIf="userLogged | async as user"
-      >
-        {{ user.email }}
-      </span> -->
+      <span *ngIf="user" class="userInfo">
+        <span class="fa-icon" style="margin-right: 10px"
+          ><fa-icon [icon]="userIcon"></fa-icon
+        ></span>
+        <span
+          style="color: white;"
+          class="navbar-brand"
+          href="#"
+        >
+          {{ user.userName }}
+        </span>
+      </span>
 
       <button
         class="btn-shine btn-registro btn"
-        *ngIf="isLogged"
+        *ngIf="!isLogged"
         (click)="irARegistro()"
       >
         <span>Registro</span>
@@ -90,7 +94,7 @@
 
       <button
         class="btn-shine btn-login btn"
-        *ngIf="isLogged"
+        *ngIf="!isLogged"
         (click)="irALogin()"
       >
         <span>Login</span>
