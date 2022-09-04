@@ -1,4 +1,4 @@
-# SALA DE JUETOS TP1 LABORATORIO IV
+# SALA DE JUEGOS TP1 LABORATORIO IV
 
 Deploy en Heroku: [Sala de Juegos](https://saladejuegos-zelarayan.herokuapp.com/)
 
