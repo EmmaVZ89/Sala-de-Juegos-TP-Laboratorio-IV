@@ -11,7 +11,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 })
 export class NavbarComponent implements OnInit {
   userIcon = faUser;
-  user: any = {};
+  user: any = null;
   isLogged = false;
 
   constructor(

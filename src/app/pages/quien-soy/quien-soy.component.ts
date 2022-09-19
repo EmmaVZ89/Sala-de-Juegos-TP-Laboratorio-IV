@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class QuienSoyComponent implements OnInit {
   myProfile: any = null;
-  user: any = {};
+  user: any = null;
 
   constructor(
     private http: HttpClient,

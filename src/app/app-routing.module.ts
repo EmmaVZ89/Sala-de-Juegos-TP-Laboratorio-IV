@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ChatComponent } from './pages/chat/chat.component';
 import { ErrorComponent } from './pages/error/error.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -10,6 +11,14 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'quiensoy', component: QuienSoyComponent },
+  { path: 'chat', component: ChatComponent },
+  {
+    path: 'juegos',
+    loadChildren: () =>
+      import('./pages/juegos/juegos-routing.module').then(
+        (m) => m.JuegosRoutingModule
+      ),
+  },
   { path: '', component: HomeComponent },
   { path: '**', component: ErrorComponent },
 ];

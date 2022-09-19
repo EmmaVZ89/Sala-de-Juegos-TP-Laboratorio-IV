@@ -116,4 +116,9 @@ export class AuthService {
   getUserLogged() {
     return this.angularFireAuth.authState;
   } // end of getUserLogged
+
+  sendUserResult(nombreJuego: string, resultado: any) {
+    return this.angularFirestore.collection(nombreJuego).add(resultado);
+  } // end of sendUserResult
+  
 }

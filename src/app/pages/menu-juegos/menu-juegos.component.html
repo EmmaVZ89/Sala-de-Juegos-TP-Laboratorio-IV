@@ -1,0 +1,83 @@
+<section class="menu-juegos-container">
+  <div class="container">
+    <div class="container row" *ngIf="user">
+      <div class="col">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../assets/ahorcado.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Ahorcado</h5>
+            <p class="card-text">
+              El juego consiste en adivinar una palabra al azar antes de agotar
+              los 6 intentos dados.
+            </p>
+            <a [routerLink]="['ahorcado']" class="btn btn-primary btn-juegos"
+              >JUGAR</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../assets/mayormenor.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Mayor o Menor</h5>
+            <p class="card-text">
+              El juego consiste en un mazo inicial de 10 cartas, donde hay que
+              adivinar si la proxima carta es Mayor o Menor. Si se logran 5
+              aciertos o más se consigue la victoria.
+            </p>
+            <a [routerLink]="['mayor-menor']" class="btn btn-primary btn-juegos"
+              >JUGAR</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../assets/joystick.jpg"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Preguntados</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a [routerLink]="['preguntados']" class="btn btn-primary btn-juegos"
+              >JUGAR</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../assets/joystick.jpg"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Juego de la vida</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a [routerLink]="['mijuego']" class="btn btn-primary btn-juegos"
+              >JUGAR</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

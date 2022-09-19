@@ -3,13 +3,13 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
+  selector: 'app-menu-juegos',
+  templateUrl: './menu-juegos.component.html',
+  styleUrls: ['./menu-juegos.component.scss'],
 })
-export class HomeComponent implements OnInit {
+export class MenuJuegosComponent implements OnInit {
   user: any = null;
-
+  
   constructor(private router: Router, private authService: AuthService) {}
 
   ngOnInit(): void {
@@ -17,12 +17,12 @@ export class HomeComponent implements OnInit {
       if (user) {
         this.user = user;
       } else {
-        this.router.navigate(["/login"]);
+        this.router.navigate(['/login']);
       }
     });
   }
 
-  goToQuienSoy() {
-    this.router.navigate(['/quiensoy']);
+  goToAhorcado() {
+    
   }
 }

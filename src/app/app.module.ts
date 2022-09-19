@@ -22,6 +22,10 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { ErrorComponent } from './pages/error/error.component';
+import { ChatComponent } from './pages/chat/chat.component';
+import { MenuJuegosComponent } from './pages/menu-juegos/menu-juegos.component';
+import { AhorcadoComponent } from './pages/juegos/ahorcado/ahorcado.component';
+import { MayorMenorComponent } from './pages/juegos/mayor-menor/mayor-menor.component';
 
 
 @NgModule({
@@ -32,7 +36,11 @@ import { ErrorComponent } from './pages/error/error.component';
     QuienSoyComponent,
     RegistroComponent,
     NavbarComponent,
-    ErrorComponent
+    ErrorComponent,
+    ChatComponent,
+    MenuJuegosComponent,
+    AhorcadoComponent,
+    MayorMenorComponent
   ],
   imports: [
     BrowserModule,
