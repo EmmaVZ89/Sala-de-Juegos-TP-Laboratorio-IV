@@ -26,6 +26,9 @@ import { ChatComponent } from './pages/chat/chat.component';
 import { MenuJuegosComponent } from './pages/menu-juegos/menu-juegos.component';
 import { AhorcadoComponent } from './pages/juegos/ahorcado/ahorcado.component';
 import { MayorMenorComponent } from './pages/juegos/mayor-menor/mayor-menor.component';
+import { PreguntadosComponent } from './pages/juegos/preguntados/preguntados.component';
+import { JuegodelavidaComponent } from './pages/juegos/juegodelavida/juegodelavida.component';
+import { NumToArrPipe } from './num-to-arr.pipe';
 
 
 @NgModule({
@@ -40,7 +43,10 @@ import { MayorMenorComponent } from './pages/juegos/mayor-menor/mayor-menor.comp
     ChatComponent,
     MenuJuegosComponent,
     AhorcadoComponent,
-    MayorMenorComponent
+    MayorMenorComponent,
+    PreguntadosComponent,
+    JuegodelavidaComponent,
+    NumToArrPipe
   ],
   imports: [
     BrowserModule,
