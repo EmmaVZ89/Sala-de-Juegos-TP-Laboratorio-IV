@@ -49,6 +49,9 @@ export class JuegodelavidaComponent implements OnInit {
     this.authService.user$.subscribe(async (user: any) => {
       if (user) {
         this.user = user;
+        if (user.rolUsuario == 'admin') {
+          this.authService.isAdmin = true;
+        }
       } else {
         this.router.navigate(['/login']);
       }

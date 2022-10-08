@@ -6,11 +6,24 @@
         <p>
           Complete los campos para iniciar sesión o ingrese como
           <input
-            style="margin: 0; padding: 5px 15px; margin-left: 10px"
+            style="
+              margin: 0;
+              padding: 5px 15px;
+              margin-left: 10px;
+              margin-right: 10px;
+            "
             type="button"
             class="fadeIn fourth"
             value="Invitado"
-            (click)="loadFields()"
+            (click)="loadFields(1)"
+          />
+          ó
+          <input
+            style="margin: 0; padding: 5px 15px; margin-left: 10px"
+            type="button"
+            class="fadeIn fourth"
+            value="Administrador"
+            (click)="loadFields(2)"
           />
         </p>
         <div class="input-container">

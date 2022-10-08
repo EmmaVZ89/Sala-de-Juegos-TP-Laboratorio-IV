@@ -31,6 +31,7 @@ import { JuegodelavidaComponent } from './pages/juegos/juegodelavida/juegodelavi
 import { NumToArrPipe } from './num-to-arr.pipe';
 import { EncuestaComponent } from './pages/encuesta/encuesta.component';
 import { ListadoResultadosComponent } from './pages/listado-resultados/listado-resultados.component';
+import { RespuestasEncuestaComponent } from './pages/respuestas-encuesta/respuestas-encuesta.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { ListadoResultadosComponent } from './pages/listado-resultados/listado-r
     JuegodelavidaComponent,
     NumToArrPipe,
     EncuestaComponent,
-    ListadoResultadosComponent
+    ListadoResultadosComponent,
+    RespuestasEncuestaComponent
   ],
   imports: [
     BrowserModule,

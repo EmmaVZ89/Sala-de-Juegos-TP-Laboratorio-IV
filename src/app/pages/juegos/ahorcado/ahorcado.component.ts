@@ -71,6 +71,9 @@ export class AhorcadoComponent implements OnInit {
     this.authService.user$.subscribe((user: any) => {
       if (user) {
         this.user = user;
+        if (user.rolUsuario == 'admin') {
+          this.authService.isAdmin = true;
+        }
         this.notifyService.showInfo('Juego iniciado', 'Ahorcado');
       } else {
         this.router.navigate(['/login']);

@@ -1,0 +1,33 @@
+<div class="respuestas-container">
+  <h1 class="titulo-listado">RESPUESTAS ENCUESTA</h1>
+  <table class="table contenedor-tabla container">
+    <thead>
+      <tr>
+        <th scope="col">FECHA</th>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">APELLIDO</th>
+        <th scope="col">EDAD</th>
+        <th scope="col">TELÉFONO</th>
+        <th scope="col">JUEGO FAVORITO</th>
+        <th scope="col">JUEGOS DESEADOS</th>
+        <th scope="col">¿RECOMIENDA LA PÁGINA?</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="tr" *ngFor="let survey of surveyResponsesList">
+        <td>{{ survey.currentDate }}</td>
+        <td>{{ survey.survey.nombre }}</td>
+        <td>{{ survey.survey.apellido }}</td>
+        <td>{{ survey.survey.edad }}</td>
+        <td>{{ survey.survey.telefono }}</td>
+        <td>{{ survey.survey.juegoFavorito }}</td>
+        <td>
+          {{ survey.survey.nuevoJuegoMemotest ? " Memotest" : ""
+          }}{{ survey.survey.nuevoJuegoTateti ? " Tateti" : ""
+          }}{{ survey.survey.nuevoJuegoPPT ? " PPT" : "" }}
+        </td>
+        <td>{{ survey.survey.recomiendaPagina }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

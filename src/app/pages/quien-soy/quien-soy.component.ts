@@ -22,6 +22,9 @@ export class QuienSoyComponent implements OnInit {
     this.authService.user$.subscribe((user: any) => {
       if (user) {
         this.user = user;
+        if (user.rolUsuario == 'admin') {
+          this.authService.isAdmin = true;
+        }
         this.http
           .get('https://api.github.com/users/EmmaVZ89')
           .subscribe((res: any) => {

@@ -13,6 +13,7 @@ import { switchMap } from 'rxjs/operators';
 })
 export class AuthService {
   user$: any;
+  isAdmin: boolean = false;
 
   constructor(
     private angularFireAuth: AngularFireAuth,
@@ -83,6 +84,7 @@ export class AuthService {
   } // end of userLogin
 
   userLogout() {
+    this.isAdmin = false;
     this.angularFireAuth.signOut();
   } // end of logout
 

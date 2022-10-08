@@ -105,11 +105,22 @@ export class LoginComponent implements OnInit {
     this.typePass2 = !this.typePass2;
   }
 
-  loadFields() {
-    this.notifyService.showInfo('Campos cargados', 'Invitado');
-    this.confirmPassword = 'soyinvitado1234';
-    this.userForm.email = 'invitado@mail.com';
-    this.userForm.password = 'soyinvitado1234';
+  loadFields(option: number) {
+    switch (option) {
+      case 1:
+        this.confirmPassword = 'soyinvitado1234';
+        this.userForm.email = 'invitado@mail.com';
+        this.userForm.password = 'soyinvitado1234';
+        this.notifyService.showInfo('Campos cargados', 'Invitado');
+        break;
+      case 2:
+        this.confirmPassword = 'soyadmin1234';
+        this.userForm.email = 'admin@mail.com';
+        this.userForm.password = 'soyadmin1234';
+        this.notifyService.showInfo('Campos cargados', 'Administrador');
+        break;
+      default:
+        break;
+    }
   } // end of loadFields
-  
 }

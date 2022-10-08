@@ -38,6 +38,9 @@ export class PreguntadosComponent implements OnInit {
     this.authService.user$.subscribe(async (user: any) => {
       if (user) {
         this.user = user;
+        if (user.rolUsuario == 'admin') {
+          this.authService.isAdmin = true;
+        }
         const paises = await this.apiPaises.getPaises();
         this.listOfCountries = paises.map((country: any) => {
           return {
