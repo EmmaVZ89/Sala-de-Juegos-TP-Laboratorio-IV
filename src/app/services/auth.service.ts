@@ -21,7 +21,7 @@ export class AuthService {
     private router: Router
   ) {
     this.user$ = this.angularFireAuth.authState.pipe(
-      switchMap((user:any) => {
+      switchMap((user: any) => {
         if (user) {
           return this.angularFirestore
             .doc<User>(`user/${user.uid}`)
@@ -44,7 +44,7 @@ export class AuthService {
             userId: data.user?.uid,
             userName: newUser.name,
             userEmail: newUser.email,
-            createdAt: Date.now()
+            createdAt: Date.now(),
           })
           .then(() => {
             this.notifyService.showSuccess(
@@ -74,16 +74,19 @@ export class AuthService {
         password
       );
     } catch (error) {
-      this.notifyService.showError("Email y/o contraseña invalidos", "Inicio fallido");
+      this.notifyService.showError(
+        'Email y/o contraseña invalidos',
+        'Inicio fallido'
+      );
       return null;
     }
   } // end of userLogin
 
-  userLogout(){
+  userLogout() {
     this.angularFireAuth.signOut();
   } // end of logout
 
-  createUserLog(collectionName:string, log:any) {
+  createUserLog(collectionName: string, log: any) {
     return this.angularFirestore.collection(collectionName).add(log);
   } // end of createUserLog
 
@@ -120,5 +123,10 @@ export class AuthService {
   sendUserResult(nombreJuego: string, resultado: any) {
     return this.angularFirestore.collection(nombreJuego).add(resultado);
   } // end of sendUserResult
+
+  getCollection(collectionName: string) {
+    const collection = this.angularFirestore.collection<any>(collectionName);
+    return collection.valueChanges();
+  } // end of getCollection
   
 }

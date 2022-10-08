@@ -61,11 +61,21 @@
           </a>
         </li>
         <li class="nav-item" *ngIf="isLogged">
-          <a class="nav-link" routerLink="#">
+          <a class="nav-link" routerLink="/encuesta">
             <button data-text="Awesome" class="button">
               <span class="actual-text">&nbsp;Encuesta&nbsp;</span>
               <span class="hover-text" aria-hidden="true"
                 >&nbsp;Encuesta&nbsp;</span
+              >
+            </button>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="isLogged">
+          <a class="nav-link" routerLink="/listado-resultados">
+            <button data-text="Awesome" class="button">
+              <span class="actual-text">&nbsp;Listados&nbsp;</span>
+              <span class="hover-text" aria-hidden="true"
+                >&nbsp;Listado&nbsp;</span
               >
             </button>
           </a>

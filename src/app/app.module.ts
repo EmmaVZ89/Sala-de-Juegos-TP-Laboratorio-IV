@@ -8,7 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { QuienSoyComponent } from './pages/quien-soy/quien-soy.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './pages/navbar/navbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,6 +29,8 @@ import { MayorMenorComponent } from './pages/juegos/mayor-menor/mayor-menor.comp
 import { PreguntadosComponent } from './pages/juegos/preguntados/preguntados.component';
 import { JuegodelavidaComponent } from './pages/juegos/juegodelavida/juegodelavida.component';
 import { NumToArrPipe } from './num-to-arr.pipe';
+import { EncuestaComponent } from './pages/encuesta/encuesta.component';
+import { ListadoResultadosComponent } from './pages/listado-resultados/listado-resultados.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { NumToArrPipe } from './num-to-arr.pipe';
     MayorMenorComponent,
     PreguntadosComponent,
     JuegodelavidaComponent,
-    NumToArrPipe
+    NumToArrPipe,
+    EncuestaComponent,
+    ListadoResultadosComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,8 @@ import { NumToArrPipe } from './num-to-arr.pipe';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
