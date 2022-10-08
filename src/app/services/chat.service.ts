@@ -9,7 +9,7 @@ export class ChatService {
 
   getMessages() {
     const collection = this.angularFirestore.collection<any>('chats', (ref) =>
-      ref.orderBy('date', 'asc').limit(25)
+      ref.orderBy('date', 'asc').limit(100)
     );
     return collection.valueChanges();
   }

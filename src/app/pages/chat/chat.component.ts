@@ -3,11 +3,8 @@ import { Router } from '@angular/router';
 import * as moment from 'moment';
 import { AuthService } from 'src/app/services/auth.service';
 import { ChatService } from 'src/app/services/chat.service';
-import {
-  faPaperPlane
-} from '@fortawesome/free-solid-svg-icons';
+import { faPaperPlane } from '@fortawesome/free-solid-svg-icons';
 import { NotificationService } from 'src/app/services/notification.service';
-
 
 @Component({
   selector: 'app-chat',
@@ -29,6 +26,19 @@ export class ChatComponent implements OnInit {
     this.chatService.getMessages().subscribe((messages) => {
       if (messages !== null) {
         this.messageList = messages;
+        for (let i = 0; i < this.messageList.length; i++) {
+          const chat = this.messageList[i];
+          chat.date = this.convertDateToUnix(chat);
+          console.log(chat.date);
+        }
+        this.messageList.sort((a: any, b: any) => a.date - b.date);
+        for (let i = 0; i < this.messageList.length; i++) {
+          const chat = this.messageList[i];
+          chat.date = moment(new Date(chat.date)).format('DD-MM-YYYY HH:mm:ss');
+        }
+        setTimeout(() => {
+          this.scrollToTheLastElementByClassName();
+        }, 100);
       }
     });
   }
@@ -36,7 +46,7 @@ export class ChatComponent implements OnInit {
   ngOnInit(): void {
     this.authService.user$.subscribe((user: any) => {
       if (user) {
-        this.user = user;        
+        this.user = user;
       } else {
         this.router.navigate(['/login']);
       }
@@ -45,7 +55,7 @@ export class ChatComponent implements OnInit {
 
   sendMessage() {
     if (this.newMessage.trim() == '') {
-      this.notifyService.showWarning("Debes escribir un mensaje", "Chat");
+      this.notifyService.showWarning('Debes escribir un mensaje', 'Chat');
       return;
     }
     const date = moment(new Date()).format('DD-MM-YYYY HH:mm:ss');
@@ -55,6 +65,31 @@ export class ChatComponent implements OnInit {
       date: date,
     };
     this.chatService.createMessage(message);
-    this.newMessage = "";
+    this.newMessage = '';
+    this.scrollToTheLastElementByClassName();
   } // end of sendMessage
+
+  scrollToTheLastElementByClassName() {
+    const elements = document.getElementsByClassName('mensajes');
+    const lastElement: any = elements[elements.length - 1];
+    const toppos = lastElement.offsetTop;
+    //@ts-ignore
+    document.getElementById('contenedor-mensajes').scrollTop = toppos;
+  } // end of scrollToTheLastElementByClassName
+
+  convertDateToUnix(chat: any) {
+    const initialDate = chat.date;
+    const splitDate = initialDate.split(' ');
+    const date = splitDate[0].split('-');
+    const time = splitDate[1].split(':');
+    const dd = date[0];
+    const mm = date[1] - 1;
+    const yyyy = date[2];
+    const hh = time[0];
+    const min = time[1];
+    const ss = time[2];
+    const dateDate = new Date(yyyy, mm, dd, hh, min, ss);
+
+    return dateDate.getTime();
+  } // end of convertDateToUnix
 }
