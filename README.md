@@ -1,6 +1,6 @@
 # SALA DE JUEGOS TP1 LABORATORIO IV
 
-Deploy en Heroku: <a href="https://saladejuegos-zelarayan.herokuapp.com/" target="_blank">Sala de Juegos</a>
+Deploy en Heroku: <a href="https://fir-userauth-fe03f.web.app/" target="_blank">Sala de Juegos</a>
 
 ## SPRINT 1
 
