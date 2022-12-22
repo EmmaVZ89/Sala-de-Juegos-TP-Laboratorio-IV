@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins");
 
-
 /* BASIC */
 
 .registro-container {
@@ -310,4 +309,24 @@ input[type="password"]:placeholder {
 
 * {
   box-sizing: border-box;
+}
+
+// responsive design
+@media screen and (max-width: 480px) {
+
+  #formContent {
+    width: 100%;
+    padding: 10px;
+  }
+
+  input[type="submit"] {
+    width: 80%;
+    padding: 10px 40px;
+    margin-top: 2rem;
+  }
+
+  .fa-icon{
+    width: 3rem;
+  }
+  
 }

@@ -39,4 +39,8 @@ export class QuienSoyComponent implements OnInit {
   test() {
     console.log(this.myProfile);
   }
+
+  irAMiJuego(): void {
+    this.router.navigate(["/juegos/juegodelavida"]);
+  }
 }

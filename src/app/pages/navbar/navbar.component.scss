@@ -126,7 +126,7 @@
     margin-bottom: 1rem;
   }
 
-  .userInfo{
+  .userInfo {
     display: block;
     width: fit-content;
     margin-left: auto;
@@ -229,4 +229,11 @@
 .btn-shine:hover:after {
   left: 120%;
   transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+// responsive design
+@media screen and (max-width: 480px) {
+  .btn {
+    width: 50%;
+  }
 }
