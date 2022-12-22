@@ -3,16 +3,19 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "postinstall": "ng build --output-path angularapp --aot --configuration production"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^14.2.0",
+    "@angular/cli": "~14.1.1",
     "@angular/common": "^14.1.0",
     "@angular/compiler": "^14.1.0",
+    "@angular/compiler-cli": "^14.1.0",
     "@angular/core": "^14.1.0",
     "@angular/fire": "^7.4.1",
     "@angular/forms": "^14.1.0",
@@ -27,13 +30,17 @@
     "@popperjs/core": "^2.10.2",
     "angular-toastify": "^1.0.4",
     "bootstrap": "^5.2.0",
+    "express": "^4.18.1",
     "firebase": "^9.9.4",
     "firestore": "^1.1.6",
+    "moment": "^2.29.4",
     "ngx-toastr": "^15.0.0",
+    "path": "^0.12.7",
     "rxjs": "~7.5.0",
     "toast-controller": "^0.11.6",
     "toastify-js": "^1.12.0",
     "tslib": "^2.3.0",
+    "typescript": "~4.7.2",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -49,5 +56,9 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
     "typescript": "~4.7.2"
+  },
+  "engines": {
+    "node": "16.14.0",
+    "npm": "8.3.1"
   }
 }

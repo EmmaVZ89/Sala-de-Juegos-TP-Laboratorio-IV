@@ -1,0 +1,243 @@
+<div class="encuesta-container">
+  <form
+    *ngIf="user"
+    [formGroup]="surveyForm"
+    class="container contenedor-form"
+    (ngSubmit)="sendForm()"
+  >
+    <div class="row d-flex flex-wrap">
+      <!-- INPUT NOMBRE -->
+      <div class="col-sm mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input
+          formControlName="nombre"
+          type="text"
+          class="form-control"
+          id="nombre"
+          placeholder="Nombre"
+        />
+        <small
+          style="color: red; font-weight: lighter"
+          *ngIf="
+          surveyForm.controls['nombre'].errors?.['required'] &&
+          surveyForm.controls['nombre'].touched
+                    "
+        >
+          El Nombre es requerido
+        </small>
+      </div>
+      <!-- INPUT APELLIDO -->
+      <div class="col-sm mb-3">
+        <label for="apellido" class="form-label">Apellido</label>
+        <input
+          formControlName="apellido"
+          type="text"
+          class="form-control"
+          id="apellido"
+          placeholder="Apellido"
+        />
+        <small
+          style="color: red; font-weight: lighter"
+          *ngIf="
+          surveyForm.controls['apellido'].errors?.['required'] &&
+          surveyForm.controls['apellido'].touched
+                    "
+        >
+          El Apellido es requerido
+        </small>
+      </div>
+    </div>
+    <div class="row">
+      <!-- INPUT EDAD -->
+      <div class="col-sm mb-3">
+        <label for="edad" class="form-label">Edad</label>
+        <input
+          formControlName="edad"
+          type="number"
+          class="form-control"
+          id="edad"
+          placeholder="Edad"
+          min="18"
+          max="99"
+        />
+        <small
+          style="color: red"
+          *ngIf="
+          surveyForm.controls['edad'].errors?.['required'] &&
+          surveyForm.controls['edad'].touched
+                "
+        >
+          La Edad es requerida
+        </small>
+        <small
+          style="color: red"
+          *ngIf="
+          surveyForm.controls['edad'].errors?.['min'] ||
+                  (surveyForm.controls['edad'].errors?.['max'] &&
+                  surveyForm.controls['edad'].touched)
+                "
+        >
+          La Edad debe ser de 18 a 99 años
+        </small>
+      </div>
+      <!-- INPUT TELÉFONO -->
+      <div class="col-sm mb-3">
+        <label for="telefono" class="form-label">Teléfono</label>
+        <input
+          formControlName="telefono"
+          type="text"
+          class="form-control"
+          id="telefono"
+          placeholder="Teléfono"
+        />
+        <small
+          style="color: red"
+          *ngIf="
+          surveyForm.controls['telefono'].errors?.['required'] &&
+          surveyForm.controls['telefono'].touched
+                "
+        >
+          La Teléfono es requerido
+        </small>
+        <small
+          style="color: red"
+          *ngIf="
+                  (surveyForm.controls['telefono'].errors?.['maxlength'] &&
+                  surveyForm.controls['telefono'].touched)
+                "
+        >
+          La Teléfono debe tener 10 digitos o menos
+        </small>
+        <small
+          style="color: red"
+          *ngIf="
+                  (surveyForm.controls['telefono'].errors?.['pattern'] &&
+                  surveyForm.controls['telefono'].touched)
+                "
+        >
+          Se deben ingresar solo números
+        </small>
+      </div>
+    </div>
+    <!-- PREGUNTAS -->
+    <hr />
+    <div class="mb-3 row d-flex flex-wrap">
+      <!-- INPUT JUEGO NUEVO -->
+      <div class="col-sm mb-3">
+        <label class="form-label">¿Qué juego te gustaría que sumemos?</label>
+        <div class="form-check">
+          <input
+            formControlName="nuevoJuegoTateti"
+            class="form-check-input"
+            type="checkbox"
+            value="tateti"
+            id="tateti"
+          />
+          <label class="form-check-label" for="tateti"> Tateti </label>
+        </div>
+        <div class="form-check">
+          <input
+            formControlName="nuevoJuegoMemotest"
+            class="form-check-input"
+            type="checkbox"
+            value="memotest"
+            id="memotest"
+          />
+          <label class="form-check-label" for="memotest"> Memotest </label>
+        </div>
+        <div class="form-check">
+          <input
+            formControlName="nuevoJuegoPPT"
+            class="form-check-input"
+            type="checkbox"
+            value="ppt"
+            id="ppt"
+          />
+          <label class="form-check-label" for="ppt">
+            Piedra, papel o tijera
+          </label>
+        </div>
+        <small *ngIf="validNewGame" class="campo-requerido">
+          {{ validNewGame }}</small
+        >
+      </div>
+      <!-- INPUT JUEGO FAVORITO -->
+      <div class="col-sm mb-3">
+        <label class="form-label">¿Qué juego te gustó más? </label>
+        <div class="form-check">
+          <input
+            formControlName="juegoFavorito"
+            class="form-check-input"
+            type="radio"
+            name="juegoFavorito"
+            id="opcion1"
+            value="ahorcado"
+            checked
+            required
+          />
+          <label class="form-check-label" for="opcion1"> Ahorcado </label>
+        </div>
+        <div class="form-check">
+          <input
+            formControlName="juegoFavorito"
+            class="form-check-input"
+            type="radio"
+            name="juegoFavorito"
+            id="opcion2"
+            value="mayorMenor"
+          />
+          <label class="form-check-label" for="opcion2"> Mayor o Menor </label>
+        </div>
+        <div class="form-check">
+          <input
+            formControlName="juegoFavorito"
+            class="form-check-input"
+            type="radio"
+            name="juegoFavorito"
+            id="opcion3"
+            value="preguntados"
+          />
+          <label class="form-check-label" for="opcion3"> Preguntados </label>
+        </div>
+        <div class="form-check">
+          <input
+            formControlName="juegoFavorito"
+            class="form-check-input"
+            type="radio"
+            name="juegoFavorito"
+            id="opcion4"
+            value="juegoDeLaVida"
+          />
+          <label class="form-check-label" for="opcion4">
+            Juego de la vida
+          </label>
+        </div>
+      </div>
+      <!-- INPUT RECOMENDAR PAGINA -->
+      <div class="col-sm mb-3">
+        <label class="form-label">¿Recomendarías esta página?</label>
+        <select
+          style="width: 10rem"
+          class="form-select"
+          id="recomendacion"
+          formControlName="recomiendaPagina"
+        >
+          <option value="" selected>Elegir opción...</option>
+          <option value="si">SI</option>
+          <option value="no">NO</option>
+        </select>
+        <small
+          style="color: red"
+          *ngIf="
+          surveyForm.controls['recomiendaPagina'].errors?.['required'] &&
+          surveyForm.controls['recomiendaPagina'].touched
+              "
+        >
+          Respesta requerida
+        </small>
+      </div>
+    </div>
+    <hr />
+    <button type="submit" class="btn-enviar">Enviar encuesta</button>
+  </form>
+</div>

@@ -1,7 +1,7 @@
 .navbar {
   // background-color: rgba(0, 0, 0, 0.3);
   position: fixed;
-  width: 100vw;
+  width: 100%;
   font-family: "Poppins", sans-serif;
   background-image: url("../../../assets/juegos.jpg");
   background-repeat: no-repeat;
@@ -12,10 +12,24 @@
   z-index: 1000;
 }
 
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
 .imagenNav {
   width: 40px;
   height: 40px;
   margin-right: 2rem;
+}
+
+.userInfo {
+  color: white;
+  font-size: 1rem;
+  padding: 5px;
+  margin-right: 10px;
+  background: rgba(129, 221, 93, 0.623);
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px #000;
 }
 
 /* From uiverse.io by @satyamchaudharydev */
@@ -32,7 +46,7 @@
   --border-right: 6px;
   --text-stroke-color: rgba(255, 255, 255, 0.8);
   --animation-color: #37ff8b;
-  --fs-size: 1em;
+  --fs-size: 0.7em;
   letter-spacing: 3px;
   text-decoration: none;
   font-size: var(--fs-size);
@@ -100,6 +114,25 @@
 
 .btn-logout {
   background-color: #fd5f5f;
+}
+
+@media screen and (max-width: 450px) {
+  .btn-registro,
+  .btn-login,
+  .btn-logout {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
+
+  .userInfo{
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+  }
 }
 
 .btn-registro span,

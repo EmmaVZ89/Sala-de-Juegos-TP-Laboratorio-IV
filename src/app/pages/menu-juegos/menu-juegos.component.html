@@ -1,0 +1,90 @@
+<section class="menu-juegos-container">
+  <div class="container">
+    <div class="container row" *ngIf="user">
+      <div class="col">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../assets/ahorcado.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Ahorcado</h5>
+            <p class="card-text">
+              El juego consiste en adivinar una palabra al azar antes de agotar
+              los 6 intentos dados.
+            </p>
+            <a [routerLink]="['ahorcado']" class="btn btn-primary btn-juegos"
+              >JUGAR</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../assets/mayormenor.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Mayor o Menor</h5>
+            <p class="card-text">
+              El juego consiste en un mazo inicial de 10 cartas, donde hay que
+              adivinar si la proxima carta es Mayor o Menor. Si se logran 5
+              aciertos o más se consigue la victoria.
+            </p>
+            <a [routerLink]="['mayor-menor']" class="btn btn-primary btn-juegos"
+              >JUGAR</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../assets/preguntados.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Preguntados</h5>
+            <p class="card-text">
+              El juego consiste en adivinar el país de la bandera mostrada. Son
+              10 turnos y si se logran 4 o más aciertos se obtiene la victoria.
+            </p>
+            <a [routerLink]="['preguntados']" class="btn btn-primary btn-juegos"
+              >JUGAR</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img
+            class="card-img-top"
+            src="../../../assets/juedodelavida.png"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">Juego de la vida</h5>
+            <p class="card-text">
+              El juego consiste en una malla de 30x30 con celdas "vivas" o
+              "muertas" iniciadas aleatoriamente. El objetivo es "matar" todas
+              las celdas en los intentos dados, teniendo en cuenta las
+              siguientes reglas: Una celda muerta con exactamente 3 celdas
+              vecinas vivas "nace" (es decir, al turno siguiente estará viva).
+              Una celda viva con 2 o 3 celdas vecinas vivas sigue viva, en otro
+              caso muere (por "soledad" o "superpoblación").
+            </p>
+            <a
+              [routerLink]="['juegodelavida']"
+              class="btn btn-primary btn-juegos"
+              >JUGAR</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
