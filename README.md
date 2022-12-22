@@ -1,27 +1,65 @@
-# SalaDeJuegosTP
+# SALA DE JUEGOS TP1 LABORATORIO IV
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.1.
+Deploy en Heroku: <a href="https://fir-userauth-fe03f.web.app/" target="_blank">Sala de Juegos</a>
 
-## Development server
+## SPRINT 1
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<p>Armado del proyecto; Subido a heroku o firebase; Componente de Login; Componente Home; Componente “Quién Soy”(Datos personales del alumno, Imagen del alumno, Explicación del juego propio) y Favicon.</p>
+<h3 align="center">HOME</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-home.png">
+ </p>
 
-## Code scaffolding
+<h3 align="center">QUIEN SOY</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-quiensoy.png">
+ </p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## SPRINT 2
 
-## Build
+<p>
+  - Componente Home
+  <ul>
+    <li>Tiene que ser el componente principal, el cual tendrá los accesos a los diferentes
+juegos y listados.</li>
+    <li>Si el usuario está logueado, mostrar información del mismo y botón de Log Out. (No
+se debe mostrar los botones de Registro y Login una vez que el usuario está
+logueado)</li>
+</ul>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Componente Login
+- <ul>
+  <li>Tiene que tener la validación de usuario contra firebase</li>
+  <li>Registrar el log de ese usuario en firebase.</li>
+  <li>En caso de que sea exitoso registrar:<ul>
+    <li>Usuario</li>
+    <li>Fecha de ingreso</li>
+    </ul></li>
+  <li>En caso correcto deber rutear a la home</li>
+  <li>Debe tener botones de acceso rápido.<ul>
+    <li>Estos botones tienen que completar los campos de email y contraseña con
+un usuario válido que al presionar el botón ingresar acceda a la home.</li></ul></li>
+  </ul>
+  
+- Componente Registro
+  <ul>
+  <li>Tiene que generar un nuevo usuario y redirigir al home al crearlo exitosamente, es
+decir, loguear al usuario automáticamente.</li>
+  <li>Emitir mensaje si el usuario ya se encuentra registrado. (NO USAR ALERT)</li>
+</ul>
+</p>
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+<h3 align="center">LOGIN</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-login.png">
+ </p>
+ 
+ <h3 align="center">REGISTRO</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-registro.png">
+ </p>
+ 
+ <h3 align="center">ERROR</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-error.png">
+ </p>
