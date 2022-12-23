@@ -1,6 +1,6 @@
 # SALA DE JUEGOS TP1 LABORATORIO IV
 
-Deploy en Heroku: <a href="https://fir-userauth-fe03f.web.app/" target="_blank">Sala de Juegos</a>
+Deploy en Firebase: <a href="https://fir-userauth-fe03f.web.app/" target="_blank">Sala de Juegos</a>
 
 ## SPRINT 1
 
@@ -62,4 +62,46 @@ decir, loguear al usuario automáticamente.</li>
  <h3 align="center">ERROR</h3>
 <p align="center">
    <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/error.png">
+ </p>
+ 
+ 
+ ## SPRINT 3
+ 
+<p>
+  - Componente Chat
+  <ul>
+    <li>Solamente usuarios logueados podrán acceder a la sala de chat.</li>
+    <li>Debemos marcar el usuario y hora que envió el mensaje</li>
+</ul>
+
+- Incorporar módulos y loadchildren
+- Incorporar los juegos
+- <ul>
+  <li>Ahorcado:<ul>
+    <li>No se debe ingresar datos desde el teclado. Utilizar botones para el ingreso de las letras.</li>
+    </ul></li>
+  <li>Mayor o Menor:<ul>
+    <li>Desde un mazo de carta se va a preguntar si la siguiente es mayor o menor. El jugador sumará un punto ante cada carta que adivine.</li>
+    </ul></li>
+  </ul>
+  
+
+<h3 align="center">CHAT</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/chat.png">
+ </p>
+ 
+ <h3 align="center">MENÚ JUEGOS</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/menujuegos.png">
+ </p>
+ 
+ <h3 align="center">AHORCADO</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/ahorcado.png">
+ </p>
+ 
+ <h3 align="center">MAYOR O MENOR</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/mayormenor.png">
  </p>
