@@ -7,12 +7,12 @@ Deploy en Heroku: <a href="https://fir-userauth-fe03f.web.app/" target="_blank">
 <p>Armado del proyecto; Subido a heroku o firebase; Componente de Login; Componente Home; Componente “Quién Soy”(Datos personales del alumno, Imagen del alumno, Explicación del juego propio) y Favicon.</p>
 <h3 align="center">HOME</h3>
 <p align="center">
-   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-home.png">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/home.png">
  </p>
 
 <h3 align="center">QUIEN SOY</h3>
 <p align="center">
-   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-quiensoy.png">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/quiensoy.png">
  </p>
 
 ## SPRINT 2
@@ -51,15 +51,15 @@ decir, loguear al usuario automáticamente.</li>
 
 <h3 align="center">LOGIN</h3>
 <p align="center">
-   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-login.png">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/login.png">
  </p>
  
  <h3 align="center">REGISTRO</h3>
 <p align="center">
-   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-registro.png">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/registro.png">
  </p>
  
  <h3 align="center">ERROR</h3>
 <p align="center">
-   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/src/assets/cap-error.png">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/error.png">
  </p>
