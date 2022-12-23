@@ -164,8 +164,6 @@ decir, loguear al usuario automáticamente.</li>
     </ul></li>
   </ul>
 
-
-  
 <h3 align="center">LISTADO DE RESULTADOS</h3>
 <p align="center">
    <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/estadisticas.png">
@@ -176,3 +174,20 @@ decir, loguear al usuario automáticamente.</li>
    <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/encuesta.png">
  </p>
  
+ ## SPRINT 6
+ 
+ - Incorporar una nueva sección que muestre las respuestas de la encuesta.
+● Solo lo podrá ver un usuario con perfil administrador
+● Utilizar Can Activate y Guard.
+
+<p>
+  - Incorporar una nueva sección que muestre las respuestas de la encuesta.
+  <ul>
+    <li>Solo lo podrá ver un usuario con perfil administrador</li>
+    <li>Utilizar Can Activate y Guard</li>
+  </ul>
+
+<h3 align="center">RESULTADO DE ENCUESTAS</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/resultadoencuestas.png">
+ </p>
