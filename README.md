@@ -1,4 +1,10 @@
-# SALA DE JUEGOS TP1 LABORATORIO IV
+<img align="left" width=100 src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/angular.png"/>
+<img align="left" width=100 src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/ts.png"/>
+<img align="left" width=100 src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/firebase.png"/>
+<img align="left" width=100 src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/html.png"/>
+<img align="left" width=100 src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/sass.png"/>
+
+<h1 align="center">SALA DE JUEGOS TP1 LABORATORIO IV</h1>
 
 Deploy en Firebase: <a href="https://fir-userauth-fe03f.web.app/" target="_blank">Sala de Juegos</a>
 
