@@ -39,7 +39,33 @@
   box-shadow: 0 0 16px rgb(196, 5, 170);
 }
 
+.card {
+  display: none;
+}
+
 .tr:hover {
   background: rgba(50, 50, 50, 0.7);
   color: rgb(196, 5, 170);
+}
+
+// Responsive design
+
+@media screen and (max-width: 480px) {
+  .contenedor-tabla {
+    display: none;
+  }
+  .card {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 2px #000;
+    background-color: rgba(196, 5, 171, 0.473);
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
 }

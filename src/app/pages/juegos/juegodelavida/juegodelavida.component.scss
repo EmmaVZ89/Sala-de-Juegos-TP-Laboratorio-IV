@@ -128,3 +128,40 @@
 .btn-reiniciar {
   transform: translateY(-1px);
 }
+
+// Responsive design
+
+@media screen and (max-width: 480px) {
+  .game button {
+    width: 12px;
+    height: 12px;
+  }
+
+  .game button.alive {
+    border: 1px solid rgb(138, 138, 138);
+  }
+
+  .game {
+    margin-top: 0rem;
+  }
+
+  .contenedor-uid {
+    position: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0.5rem;
+    left: 0;
+    width: 80%;
+  }
+
+  .contenedor-juego-terminado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

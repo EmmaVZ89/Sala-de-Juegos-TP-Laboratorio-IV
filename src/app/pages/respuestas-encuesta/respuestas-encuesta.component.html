@@ -30,4 +30,17 @@
       </tr>
     </tbody>
   </table>
+  <div class="card" *ngFor="let survey of surveyResponsesList">
+    <p>{{ survey.currentDate }}</p>
+    <p>{{ survey.survey.nombre }} {{ survey.survey.apellido }}</p>
+    <p>Edad: {{ survey.survey.edad }} años</p>
+    <p>Tel: {{ survey.survey.telefono }}</p>
+    <p>Favorito: {{ survey.survey.juegoFavorito }}</p>
+    <p>Deseados: 
+      {{ survey.survey.nuevoJuegoMemotest ? " Memotest" : ""
+      }} {{ survey.survey.nuevoJuegoTateti ? " Tateti" : ""
+      }} {{ survey.survey.nuevoJuegoPPT ? " PPT" : "" }}
+    </p>
+    <p>Recomienda: {{ survey.survey.recomiendaPagina }}</p>
+  </div>
 </div>

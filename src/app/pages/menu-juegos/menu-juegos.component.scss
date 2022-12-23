@@ -91,3 +91,20 @@
 .btn-juegos:active {
   transform: translateY(-1px);
 }
+
+// Responsive design
+@media screen and (max-width: 480px) {
+  .row,
+  .col {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .card-img-top {
+    width: 100%;
+  }
+
+  .card-2 {
+    margin-top: 2rem;
+  }
+}

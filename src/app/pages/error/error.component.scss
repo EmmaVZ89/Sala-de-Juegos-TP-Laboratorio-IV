@@ -50,12 +50,12 @@
   box-shadow: 0 0 20px #ff0000a8;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 480px) {
   .wrapper {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    width: 22rem;
+    width: 95%;
     height: 100vh;
     margin-left: 1rem;
     padding-top: 5rem;

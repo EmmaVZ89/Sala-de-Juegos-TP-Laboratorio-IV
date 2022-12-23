@@ -94,12 +94,6 @@
   transform: translateY(-1px);
 }
 
-@media screen and (max-width: 500px) {
-  .btn-letra {
-    padding: 0.6em 1.4em;
-  }
-}
-
 /* ****************************************************************** */
 /* ****************************************************************** */
 /* ****************************************************************** */
@@ -133,4 +127,22 @@
 
 .btn-reiniciar:active {
   transform: translateY(-1px);
+}
+
+// Responsive design
+
+@media screen and (max-width: 480px) {
+  .img-horca {
+    width: 15rem;
+  }
+
+  .contenedor-botones {
+    padding-top: 1rem;
+  }
+
+  .btn-letra {
+    padding: 0.7em 1.5em;
+    font-size: 9px;
+    font-weight: bolder;
+  }
 }

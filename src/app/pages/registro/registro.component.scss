@@ -320,9 +320,12 @@ input[type="password"]:placeholder {
   }
 
   input[type="submit"] {
-    width: 80%;
+    width: 95%;
+    height: 4rem;
     padding: 10px 40px;
+    margin: 0px;
     margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 
   .fa-icon{
