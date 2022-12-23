@@ -136,3 +136,43 @@ decir, loguear al usuario automáticamente.</li>
    <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/juegodelavida.png">
  </p>
  
+ ## SPRINT 5
+ 
+<p>
+  - Incorporar listado de resultados
+  <ul>
+    <li>Al finalizar cada juego se debe guardar registro del resultado:<ul>
+    <li>Guardar datos del usuario, fecha, puntaje, etc..</li>
+    </ul></li>
+  </ul>
+  
+   - Incorporar una encuesta
+  <ul>
+    <li>Tiene que pedir los siguientes datos:<ul>
+    <li>Nombre y apellido.</li>
+    <li>Edad, validar que sean mayores de 18 años y menores de 99 años..</li>
+    <li>Número de teléfono, validar que sean solo números y no más de 10 caracteres.</li>
+    </ul></li>
+  </ul>
+  <ul>
+    <li>Mínimo 3 preguntas:<ul>
+    <li>Utilizar distintos controles, textbox, checkbox, radiobutton, etc.</li>
+    <li>No se pueden repetir.</li>
+    <li>Tiene que contar con validaciones.</li>
+    <li>Todos los campos son requeridos.</li>
+    <li>Guardar las respuestas en Firebase identificando el usuario.</li>
+    </ul></li>
+  </ul>
+
+
+  
+<h3 align="center">LISTADO DE RESULTADOS</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/estadisticas.png">
+ </p>
+ 
+ <h3 align="center">ENCUESTA</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/encuesta.png">
+ </p>
+ 
