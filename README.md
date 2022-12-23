@@ -105,3 +105,34 @@ decir, loguear al usuario automáticamente.</li>
 <p align="center">
    <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/mayormenor.png">
  </p>
+ 
+ ## SPRINT 4
+ 
+<p>
+  - Agregar el juego Preguntados
+  <ul>
+    <li>Tiene que obtener las imágenes de una api.</li>
+    <li>Realizar el llamado a la api desde un Service</li>
+    <li>Dar al jugador opciones de elección. No se puede ingresar datos por teclado.</li>
+</ul>
+
+- Juego propio
+- <ul>
+  <li>Juegos que no se pueden utilizar:<ul>
+    <li>TATETI</li>
+    <li>MEMOTEST</li>
+    <li>PIEDRA PAPEL O TIJERA</li>
+    </ul></li>
+  <li>Agregar descripción de su juego en la sección “Quién soy”. Debe contar con información de qué juego es y cómo se juega.</li>
+  </ul>
+  
+<h3 align="center">PREGUNTADOS</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/preguntados.png">
+ </p>
+ 
+ <h3 align="center">JUEGOS DE LA VIDA</h3>
+<p align="center">
+   <img src="https://github.com/EmmaVZ89/Sala-de-Juegos-TP-Laboratorio-IV/blob/main/imgReadme/juegodelavida.png">
+ </p>
+ 
